@@ -28,6 +28,15 @@
         "type": "page"
       }
     ],
+    "metaData": {
+      "customizeData": [
+        {
+          "name": "supportLists",
+          "value": "com.your.phoneAppPackageName:phone_fingerprint",
+          "extra": ""
+        }
+      ]
+    },
     "js": [
       {
         "pages": [

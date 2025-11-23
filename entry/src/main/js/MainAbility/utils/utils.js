@@ -2,9 +2,9 @@ import { PHONE_APP_FINGERPRINT, PHONE_APP_PACKAGE_NAME } from '../constants/cons
 import { Builder, Message, P2pClient } from '../wearenginesdk/wearengine.js';
 import file from '@system.file';
 
-var p2pClient = new P2pClient();
-var messageClient = new Message();
-var builderClient = new Builder();
+let p2pClient = new P2pClient();
+let messageClient = new Message();
+let builderClient = new Builder();
 
 function setFingerprint() {
     p2pClient.setPeerPkgName(PHONE_APP_PACKAGE_NAME);
@@ -21,14 +21,14 @@ function registerMessageReceiver() {
         },
         onReceiveMessage: function (data) {
             if (data && data.isFileType) {
-                console.info('Receive file name:' + data.name)
+                console.info(`Receive file name: ${data.name}`)
                 const content = getPlaylist('internal://app/playlist.json')
                 content !== '' ?
                     this.playlist = JSON.parse(content) :
                     this.playlist = ''
                 return
             }
-            console.info('Receive message:' + data)
+            console.info(`Receive message: ${data}`);
         },
     });
 }
@@ -58,7 +58,7 @@ function sendMusicAction(actionType) {
             console.info(resultCode.data + resultCode.code);
         },
         onSendProgress: function (count) {
-            console.info('send proccess:' + count);
+            console.info(`send proccess: ${count}`);
         },
     });
 }
@@ -91,8 +91,16 @@ function getPlaylist(path) {
 function unregisterMessageReceiver() {
     p2pClient.unregisterReceiver({
         onSuccess: function () {
-            console.info("Stop receiving messages is sent")
+            console.info('Stop receiving messages is sent')
         },
     });
-},
-export { registerMessageReceiver, setFingerprint, unregisterMessage, sendMusicAction, getPlaylist, unregisterMessageReceiver }
+}
+
+export {
+    registerMessageReceiver,
+    setFingerprint,
+    unregisterMessage,
+    sendMusicAction,
+    getPlaylist,
+    unregisterMessageReceiver
+}

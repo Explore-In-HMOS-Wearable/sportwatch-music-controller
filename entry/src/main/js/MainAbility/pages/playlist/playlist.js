@@ -2,6 +2,7 @@ import router from '@ohos.router';
 import { getPlaylist } from '../../utils/utils';
 
 let content;
+
 export default {
     data: {
         playlist: []
@@ -13,6 +14,7 @@ export default {
             });
             return;
         }
+        // Please configure your test json on mobile side
         content = getPlaylist('internal://app/playlist.json')
         this.playlist = JSON.parse(content);
     },

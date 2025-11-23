@@ -1,5 +1,6 @@
 <div class="container">
-    <text if="{{ !playlist }}" class="error-message">Failed to receive data \nmake sure your \nmobile app is open.</text>
+    <text if="{{ ! playlist }}" class="error-message">Failed to receive data \nmake sure your \nmobile app is open.
+    </text>
     <text class="page-title">Playlist</text>
     <list class="playlist-wrapper">
         <list-item for="{{ playlist }}" class="playlist-item" on:swipe="controlMusic({{ $item }})"

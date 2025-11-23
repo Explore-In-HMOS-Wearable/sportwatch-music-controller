@@ -1,4 +1,3 @@
-import brightness from '@system.brightness'
 import app from '@system.app'
 import {
     getPlaylist,
@@ -28,16 +27,12 @@ export default {
     },
 
     onInit() {
-        this.initMusicData();
-        brightness.setKeepScreenOn({
-            keepScreenOn: true,
-        });
         setFingerprint()
         registerMessageReceiver()
         this.initializeMusicPlayer()
     },
     initializeMusicPlayer() {
-        var that = this
+        let that = this
         this.playlist = getPlaylist('internal://app/playlist.json')
         if (this.playlist.length === 0) {
             router.replace({
@@ -61,12 +56,12 @@ export default {
                 that.durationTime =
                     `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
             }
-            console.info("Music data updated")
+            console.info('Music data updated')
             return;
         }
     },
     startTimer() {
-        var that = this;
+        let that = this;
         if (that.intervalId) {
             clearInterval(that.intervalId);
         }
@@ -84,7 +79,7 @@ export default {
         }, 1000);
     },
     updateTimeDisplay() {
-        var that = this;
+        let that = this;
         const remainingMs = that.totalDurationMs - that.currentPositionMs;
         const totalSeconds = Math.floor(remainingMs / 1000);
         const minutes = Math.floor(totalSeconds / 60);
@@ -102,7 +97,7 @@ export default {
         const that = this;
         that.isPlay = !that.isPlay;
         const command = that.isPlay ? 'play' : 'pause';
-        that.sendMusicAction(command);
+        sendMusicAction(command);
 
         if (that.isPlay) {
             that.startTimer();
@@ -120,7 +115,7 @@ export default {
         sendMusicAction('next');
     },
     swipeEvent(e) {
-        if (e.direction == "right") {
+        if (e.direction === 'right') {
             app.terminate();
         }
     },

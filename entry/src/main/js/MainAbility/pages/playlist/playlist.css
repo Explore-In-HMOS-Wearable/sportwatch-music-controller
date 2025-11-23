@@ -9,6 +9,7 @@
 }
 
 /*page info*/
+
 .page-title {
     width: 100%;
     height: 20%;
@@ -16,6 +17,7 @@
     text-align: center;
     font-size: 28fp;
 }
+
 .error-message {
     width: 100%;
     height: 100%;
@@ -25,6 +27,7 @@
 }
 
 /*playlist info*/
+
 .playlist-wrapper {
     display: flex;
     width: 80%;
@@ -81,6 +84,7 @@
 }
 
 /*nav info*/
+
 .nav-wrapper {
     display: flex;
     flex-direction: row;

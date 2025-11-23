@@ -4,7 +4,7 @@ import { getPlaylist } from '../../utils/utils';
 
 export default {
     swipeHandler(e) {
-        if (e.direction == "right") {
+        if (e.direction === 'right') {
             app.terminate();
         }
     },
