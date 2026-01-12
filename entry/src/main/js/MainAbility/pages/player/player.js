@@ -25,7 +25,6 @@ export default {
         intervalId: null,
         playlist: []
     },
-
     onInit() {
         setFingerprint()
         registerMessageReceiver()
@@ -118,5 +117,5 @@ export default {
         if (e.direction === 'right') {
             app.terminate();
         }
-    },
+    }
 }

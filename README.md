@@ -1,6 +1,6 @@
 > **Note:** To access all shared projects, get information about environment setup, and view other guides, please visit [Explore-In-HMOS-Wearable Index](https://github.com/Explore-In-HMOS-Wearable/hmos-index).
 
-# [Lite Wearable] Music Controller with Wear Engine
+# Music Controller with Wear Engine
 
 This application demonstrates seamless integration between mobile devices and Huawei lite
 wearable using Huawei Wear Engine. It allows users to control music playback (play, pause, next,
